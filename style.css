@@ -1,0 +1,107 @@
+/* body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f1f5f9;
+    font-family: Arial, sans-serif;
+}
+
+.magic-card {
+    width: 220px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    background-color: #334155;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+} */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f1f5f9;
+    font-family: Arial, sans-serif;
+
+}
+
+.magic-card {
+
+    width: min(220px, calc(100vw - 40px));
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    background-color: #334155;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    animation:
+        appear 2s ease-out forwards,
+        slide 4s ease-in-out 2s infinite alternate;
+
+    transition:
+        rotate 0.8s ease,
+        background-color 0.8s ease;
+
+
+}
+
+
+.magic-card:hover {
+    rotate: 360deg;
+    background-color: #7c3aed;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slide {
+    from {
+        translate: -15px 0;
+    }
+
+    to {
+        translate: 15px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .magic-card {
+        animation: none;
+        transition: none;
+        rotate: 0deg;
+        translate: 0 0;
+    }
+}
+
+
+
